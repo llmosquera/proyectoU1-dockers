@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Data
-public class HoraioEntidad {
+public class HorarioEntidad {
 
     private Long id_horario;
     private LocalDate dias_semana;
