@@ -3,7 +3,9 @@ package com.proyecto.proyectou1distribuidas.repositorio;
 import com.proyecto.proyectou1distribuidas.entidades.EstacionEntidad;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -38,5 +40,25 @@ public class EstacionRepositorio {
             return estacionEntidad;
         }
     }
+
+    //metodo para obtener por Id
+    public EstacionEntidad getEstacionById(Long id_estacion){
+
+        EstacionEntidad entidad = estacion.get(id_estacion);
+        return entidad;
+    }
+
+    //obtener todos;
+    private List<EstacionEntidad> obtenerTodasEstaciones(){
+        return new ArrayList<>(estacion.values());
+    }
+
+
+    //metodo para elmiminar
+    public void eliminarEstacion(Long id_estacion){
+        estacion.remove(id_estacion);
+    }
+
+    
 
 }
