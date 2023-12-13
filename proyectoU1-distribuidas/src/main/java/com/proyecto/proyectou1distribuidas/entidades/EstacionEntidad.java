@@ -10,4 +10,10 @@ public class EstacionEntidad {
     private String plataformas_estacion;
     private String estacion_origen;
     private String estacion_destino;
+
+    //relacion de uno a muhcos con ruta y tre
+    private RutaEntidad rutaEntidad;
+
+    //relacion de uno a muchos con tren
+    private TrenEntidad trenEntidad;
 }
