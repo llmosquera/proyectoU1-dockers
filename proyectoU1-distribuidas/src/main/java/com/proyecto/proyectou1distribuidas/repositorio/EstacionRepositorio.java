@@ -3,10 +3,7 @@ package com.proyecto.proyectou1distribuidas.repositorio;
 import com.proyecto.proyectou1distribuidas.entidades.EstacionEntidad;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -59,6 +56,9 @@ public class EstacionRepositorio {
         estacion.remove(id_estacion);
     }
 
-    
+    Optional<EstacionEntidad> getById(Long id_estacion){
+        return Optional.ofNullable(estacion.get(id_estacion));
+    }
+
 
 }
