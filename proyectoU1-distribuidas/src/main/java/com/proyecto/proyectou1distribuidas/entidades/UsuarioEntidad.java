@@ -9,4 +9,7 @@ public class UsuarioEntidad {
     private String contrasenia_usuario;
     private String rol_usuario;
 
+    //relacion de muchos a unos
+    private ReservaBilletesEntidad reservaBilletesEntidad;
+
 }
