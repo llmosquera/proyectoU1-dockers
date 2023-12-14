@@ -46,7 +46,7 @@ public class EstacionRepositorio {
     }
 
     //obtener todos;
-    private List<EstacionEntidad> obtenerTodasEstaciones(){
+    public List<EstacionEntidad> obtenerTodasEstaciones(){
         return new ArrayList<>(estacion.values());
     }
 
