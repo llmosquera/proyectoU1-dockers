@@ -5,10 +5,7 @@ import com.proyecto.proyectou1distribuidas.entidades.TrenEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -65,5 +62,17 @@ public class TrenRepositorio {
             throw new IllegalArgumentException("Tren con ID " + id_tren + " no encontrado.");
 
         }
+    }
+
+    public void eliminarTren(Long id_tren){
+        trenes.remove(id_tren);
+    }
+
+    public Optional<TrenEntidad> getById(Long id_tren){
+        return Optional.ofNullable(trenes.get(id_tren));
+    }
+    //listarTdos
+    public List<TrenEntidad> obtenerTodos(){
+        return new ArrayList<>(trenes.values());
     }
 }
