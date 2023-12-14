@@ -59,6 +59,24 @@ public class EstacionRepositorio {
     Optional<EstacionEntidad> getById(Long id_estacion){
         return Optional.ofNullable(estacion.get(id_estacion));
     }
+    public EstacionEntidad actualizaEntidad(EstacionEntidad estacionEntidad, Long id_estacion){
+
+        if(estacion.containsKey(id_estacion)){
+            //obtener el tren existente por su id
+            EstacionEntidad estacionExiste = estacion.get(id_estacion);
+            //actualizar la informacion del horario
+            estacionExiste.setEstacion_origen(estacionEntidad.getEstacion_origen());
+            estacionExiste.setEstacion_destino(estacionEntidad.getEstacion_destino());
+            estacionExiste.setNombre_estacion(estacionEntidad.getNombre_estacion());
+            estacionExiste.setPlataformas_estacion(estacionEntidad.getPlataformas_estacion());
+
+
+            estacion.put(id_estacion, estacionExiste);
+            return estacionExiste;
+        }else{
+            throw new IllegalArgumentException("Estacion con ID " + id_estacion + " no encontrado.");
+        }
+    }
 
 
 }
