@@ -1,6 +1,8 @@
 package com.proyecto.proyectou1distribuidas.repositorio;
 
+import com.proyecto.proyectou1distribuidas.entidades.HorarioEntidad;
 import com.proyecto.proyectou1distribuidas.entidades.ReservaEntidad;
+import com.proyecto.proyectou1distribuidas.entidades.UsuarioEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
