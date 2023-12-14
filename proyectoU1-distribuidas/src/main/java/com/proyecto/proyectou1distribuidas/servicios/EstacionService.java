@@ -1,5 +1,6 @@
 package com.proyecto.proyectou1distribuidas.servicios;
 
+import com.proyecto.proyectou1distribuidas.entidades.EstacionEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
