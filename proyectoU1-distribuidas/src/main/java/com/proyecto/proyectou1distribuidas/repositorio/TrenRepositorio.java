@@ -50,4 +50,20 @@ public class TrenRepositorio {
 
 
     }
+
+    //actualizar
+    public TrenEntidad actualizarTren(TrenEntidad trenEntidad, Long id_tren){
+        if(trenes.containsKey(id_tren)){
+            //obtener el tren existente por su id
+            TrenEntidad trenExiste = trenes.get(id_tren);
+            trenExiste.setModelo_tren(trenEntidad.getModelo_tren());
+            trenExiste.setCapacidad(trenEntidad.getCapacidad());
+            trenExiste.setEstado(trenEntidad.getEstado());
+            trenes.put(id_tren,trenExiste);
+            return trenExiste;
+        }else{
+            throw new IllegalArgumentException("Tren con ID " + id_tren + " no encontrado.");
+
+        }
+    }
 }
