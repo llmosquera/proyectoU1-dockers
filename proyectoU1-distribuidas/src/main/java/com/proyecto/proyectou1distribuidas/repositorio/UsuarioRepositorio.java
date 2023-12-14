@@ -16,4 +16,22 @@ public class UsuarioRepositorio {
         this.usuarios = new HashMap<>();
         this.id_generador = new AtomicLong(0);
     }
+    public UsuarioEntidad guardarUsuario(UsuarioEntidad usuarioEntidad) {
+        if (usuarioEntidad.getId_usuario() != null) {
+            //la estacion ya tiene un id, por lo tanto es una actualizacion
+            if (usuarios.containsKey(usuarioEntidad.getId_usuario())) {
+
+                //reemplazar la estacion
+                usuarios.put(usuarioEntidad.getId_usuario(), usuarioEntidad);
+                return usuarioEntidad;
+            } else {
+                throw new IllegalArgumentException("Estacion no encontrado para el ID: " + usuarioEntidad.getId_usuario());
+            }
+        } else {
+            long id_usuario = id_generador.incrementAndGet();
+            usuarioEntidad.setId_usuario(id_usuario);
+            usuarios.put(id_usuario, usuarioEntidad);
+            return usuarioEntidad;
+        }
+    }
 }
