@@ -26,7 +26,7 @@ public class EstacionService {
     }
 
     public List<EstacionEntidad> obtenerTodasEstacionesAll(){
-        return repositorio.obtenerTodasEstaciones();
+        return repositorio.obtenerTodasEstacionesAll();
     }
 
     //metodo para elmiminar
