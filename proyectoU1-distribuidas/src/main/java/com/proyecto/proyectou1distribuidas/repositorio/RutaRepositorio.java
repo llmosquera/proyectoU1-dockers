@@ -49,4 +49,18 @@ public class RutaRepositorio {
         }
     }
 
+    public RutaEntidad actualizarRuta(RutaEntidad rutaEntidad, Long id_ruta){
+        if(rutas.containsKey(id_ruta)){
+            //obtener el tren existente por su id
+            RutaEntidad rutaExiste = rutas.get(id_ruta);
+            rutaExiste.setDescripcion(rutaEntidad.getDescripcion());
+            rutaExiste.setDuracion_estimada(rutaExiste.getDuracion_estimada());
+            rutas.put(id_ruta,rutaExiste);
+            return rutaExiste;
+        }else{
+            throw new IllegalArgumentException("Tren con ID " + id_ruta + " no encontrado.");
+
+        }
+    }
+
 }
