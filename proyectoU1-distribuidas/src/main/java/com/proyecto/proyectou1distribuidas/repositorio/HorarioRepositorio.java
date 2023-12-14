@@ -53,4 +53,21 @@ public class HorarioRepositorio {
         horarios.put(idHorario, horarioEntidad);
         return horarioEntidad;
     }
+
+    public HorarioEntidad actualizarHorario(HorarioEntidad horarioEntidad, Long id_horario){
+
+        if(horarios.containsKey(id_horario)){
+            //obtener el tren existente por su id
+            HorarioEntidad horarioExiste = horarios.get(id_horario);
+            //actualizar la informacion del horario
+            horarioExiste.setDias_semana(horarioEntidad.getDias_semana());
+            horarioExiste.setHora_salida(horarioEntidad.getHora_salida());
+            horarioExiste.setHora_llegada(horarioEntidad.getHora_llegada());
+
+            horarios.put(id_horario, horarioExiste);
+            return horarioExiste;
+        }else{
+            throw new IllegalArgumentException("Horario con ID " + id_horario + " no encontrado.");
+        }
+    }
 }
