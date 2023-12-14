@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ReservaBilletesEntidad {
+public class ReservaEntidad {
     private Long id_reserva;
 
     private String detalle_pasajero;
