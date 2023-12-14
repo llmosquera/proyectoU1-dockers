@@ -6,9 +6,7 @@ import com.proyecto.proyectou1distribuidas.entidades.UsuarioEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -74,6 +72,18 @@ public class ReservaRepositorio {
         }else{
             throw new IllegalArgumentException("Horario con ID " + id_reserva + " no encontrado.");
         }
+    }
+    public List<ReservaEntidad> obtenerTodas(){
+        return new ArrayList<>(reservas.values());
+    }
+
+    public Optional<ReservaEntidad> getById(Long id_reserva){
+        return Optional.ofNullable(reservas.get(id_reserva));
+    }
+
+
+    public void eliminar (Long id_reserva){
+        reservas.remove(id_reserva);
     }
 
 
