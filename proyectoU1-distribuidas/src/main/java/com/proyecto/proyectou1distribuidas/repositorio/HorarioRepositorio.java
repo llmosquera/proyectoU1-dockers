@@ -70,4 +70,8 @@ public class HorarioRepositorio {
             throw new IllegalArgumentException("Horario con ID " + id_horario + " no encontrado.");
         }
     }
+    public void eliminarHorario(Long id_horario){
+        horarios.remove(id_horario);
+    }
+
 }
