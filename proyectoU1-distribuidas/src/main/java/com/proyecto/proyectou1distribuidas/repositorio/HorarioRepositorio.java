@@ -6,10 +6,7 @@ import com.proyecto.proyectou1distribuidas.entidades.TrenEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -78,4 +75,7 @@ public class HorarioRepositorio {
         return Optional.ofNullable(horarios.get(id_horario));
     }
     //
+    public List<HorarioEntidad> obtenerTodos(){
+        return new ArrayList<>(horarios.values());
+    }
 }
