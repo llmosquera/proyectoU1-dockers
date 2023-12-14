@@ -34,4 +34,10 @@ public class UsuarioRepositorio {
             return usuarioEntidad;
         }
     }
+    public UsuarioEntidad getUsuarioById(Long id_usuario){
+
+        UsuarioEntidad entidad = usuarios.get(id_usuario);
+        return entidad;
+    }
+
 }
