@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -73,5 +74,8 @@ public class HorarioRepositorio {
     public void eliminarHorario(Long id_horario){
         horarios.remove(id_horario);
     }
-
+    public Optional<HorarioEntidad> getById(Long id_horario){
+        return Optional.ofNullable(horarios.get(id_horario));
+    }
+    //
 }
