@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 public class HorarioRepositorio {
@@ -15,5 +16,6 @@ public class HorarioRepositorio {
     public TrenRepositorio trenRepositorio;
 
     private Map<Long, HorarioEntidad> horarios;
+    private AtomicLong id_generador;
 
 }
