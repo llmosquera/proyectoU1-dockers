@@ -5,10 +5,7 @@ import com.proyecto.proyectou1distribuidas.entidades.RutaEntidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -61,6 +58,18 @@ public class RutaRepositorio {
             throw new IllegalArgumentException("Tren con ID " + id_ruta + " no encontrado.");
 
         }
+    }
+
+    public void eliminarRuta(Long id_ruta){
+        rutas.remove(id_ruta);
+    }
+
+    public Optional<RutaEntidad> getById(Long id_ruta){
+        return Optional.ofNullable(rutas.get(id_ruta));
+    }
+    //listarTdos
+    public List<RutaEntidad> obtenerTodos(){
+        return new ArrayList<>(rutas.values());
     }
 
 }
