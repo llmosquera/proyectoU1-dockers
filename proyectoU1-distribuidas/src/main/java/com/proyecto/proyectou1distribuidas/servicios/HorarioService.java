@@ -9,4 +9,8 @@ public class HorarioService {
 
     @Autowired
     public HorarioRepositorio repositorio;
+
+    public HorarioService() {
+        this.repositorio = new HorarioRepositorio();
+    }
 }
