@@ -3,10 +3,7 @@ package com.proyecto.proyectou1distribuidas.repositorio;
 import com.proyecto.proyectou1distribuidas.entidades.UsuarioEntidad;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
@@ -50,6 +47,9 @@ public class UsuarioRepositorio {
     //metodo para elmiminar
     public void eliminarUsuario(Long id_usuario){
         usuarios.remove(id_usuario);
+    }
+    public Optional<UsuarioEntidad> getById(Long id_usuario){
+        return Optional.ofNullable(usuarios.get(id_usuario));
     }
 
 }
