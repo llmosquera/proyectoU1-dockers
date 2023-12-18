@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="text-center">
+    <h2>Lista de Estaciones</h2>
+    <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+   
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Ubicación</th>
+          <th scope="col">Plataformas</th>
+          <th scope="col">Estación Origen</th>
+          <th scope="col">Estación Destino</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+  
+        <tr *ngFor="let estacion of estaciones">
+  
+          <td>{{ estacion.id_estacion }}</td>
+          <td>{{ estacion.nombre_estacion }}</td>
+          <td>{{ estacion.ubicacion_estacion }}</td>
+          <td>{{ estacion.plataformas_estacion }}</td>
+          <td>{{ estacion.estacion_origen }}</td>
+          <td>{{ estacion.estacion_destino }}</td>
+          <td>
+            <button class="btn" (click)="irAEditarEstacion(estacion.id_estacion)"><i class="fa fa-pencil-square" style="font-size:25px;"></i></button>
+            <button class="btn" (click)="eliminarEstacion(estacion.id_estacion)"><i class="fa fa-trash" style="font-size: 25px; color: red;" aria-hidden="true"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+   
+    <button class="btn btn-primary mt-3" (click)="irAGuardarEstacion()">Insertar Estación</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+    <button type="submit" class="btn btn-primary" (click)="irATrenes()">Ir a Trenes</button>
+  </div>
+  
+</div>
