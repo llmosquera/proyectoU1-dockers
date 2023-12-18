@@ -1,0 +1,98 @@
+body {
+    background-image: url('../../../assets/ferrovial.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 500px;
+    text-align: center;
+    position: relative;
+    
+}
+
+.form-label {
+    color: black;
+    margin-top: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form-control {
+    width: 100%; /* Ajusta el ancho al 50% */
+    box-sizing: border-box;
+    margin: 0 auto; /* Centra el elemento */
+    
+    border-color: black;
+}
+
+button {
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centra el elemento */
+}
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.profile-image {
+    width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px; /* Ajusta la posición vertical según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pass{
+    font-family: fantasy;
+    margin-top: 30px;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.input-group-text{
+    background-color: #000000;
+    color: #fff;
+
+}
+select.form-control {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-color: rgb(0, 0, 0);
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path d="M6 6L0 0h12z" fill="%23000"/></svg>') no-repeat right 0.75rem center/8px 10px;
+    padding-right: 2.5rem;
+}
+.btn-primary{
+    color: #000000;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 20px;
+}
+span{
+    font-family: fantasy;
+}
+
+.btn-primary:hover{
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #fff;
+    border-radius: 20px;
+}
