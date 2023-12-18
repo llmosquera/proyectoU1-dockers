@@ -1,0 +1,91 @@
+body {
+    background-image: url('../../../assets/ferrovial.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.profile-image {
+    width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px; /* Ajusta la posición vertical según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-label {
+    color: black;
+    margin-top: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form-control {
+    width: 50%;
+    box-sizing: border-box;
+   
+    border-color: black;
+}
+
+select {
+    
+    box-sizing: border-box;
+   
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+button {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.pass{
+    font-family: fantasy;
+    margin-top: 30px;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.input-group-text{
+    background-color: #000000;
+    color: #fff;
+
+}
+
+.btn-primary{
+    color: #000000;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 20px;
+}
+span{
+    font-family: fantasy;
+}
+
+.btn-primary:hover{
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #fff;
+    border-radius: 20px;
+}

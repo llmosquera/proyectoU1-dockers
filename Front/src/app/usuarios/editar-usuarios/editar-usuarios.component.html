@@ -1,1 +1,47 @@
-<p>editar-usuarios works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <form (ngSubmit)="editarUsuario(usuarios.id_usuario)">
+    <img class="profile-image" src="../../../assets/ferrovial.jpg" alt="Profile Image"> <!-- Cambia 'ruta/de/la/imagen.jpg' por la ruta de tu imagen -->
+    <div class="mb-3">
+      <label for="nombre_usuario" class="form-label">Nombre Usuario</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        </div>
+        <input type="text" style="width: 50%;" class="form-control" name="nombre_usuario" id="nombre_usuario" [(ngModel)]="usuarios.nombre_usuario" required>
+      </div>
+    </div>
+
+   
+    <div class="mb-2">
+      <label class="pass" for="contrasenia_usuario">Contraseña Usuario</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-incognito"></i></span>
+        </div>
+        <input type="password" style="width: 50%;" class="form-control" name="contrasenia_usuario" id="contrasenia_usuario" [(ngModel)]="usuarios.contrasenia_usuario" required>
+      </div>
+    </div>
+    <select id="frutas" name="frutas" [(ngModel)]="usuarios.rol_usuario">
+      <option value="usuario">Usuario</option>
+      <option value="administrados">Adminstrado</option>
+      <option value="limpieza">Limpieza</option>
+    </select>
+    <br>
+
+    <button type="submit" class="btn btn-primary" (click)="editarUsuario(usuarios.id_usuario)">Actualizar
+      Estación</button>
+  </form>
+</body>
+
+</html>
