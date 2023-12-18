@@ -1,1 +1,44 @@
-<p>usuarios works!</p>
+<div class="container mt-4">
+    <div>
+      <h2>Lista de Usuarios</h2>
+      <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre Usuario</th>
+            <th>Contraseña Usuario</th>
+            <th>Rol Usuario</th>
+           
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nombre_usuario }}</td>
+            <td>{{ usuario.contrasenia_usuario }}</td>
+            <td>{{ usuario.rol_usuario}}</td>
+    
+            <td>
+              <button (click)="editarUsuario(usuario.id_usuario)" class="btn btn-sm me-3"><i class="fa fa-pencil-square" style="font-size:25px;"></i>
+              </button>
+              <button class="btn " (click)="eliminarUsuarios(usuario.id_usuario)"><i class="fa fa-trash" aria-hidden="true" style="font-size:25px; color: red;"></i></button>
+
+              <!-- <button class="btn btn-warning" (click)="irAEditarTren(tren.id_tren)">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarTren(tren.id_tren)">Eliminar</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <button class="btn btn-primary mt-3" (click)="irAGuardarTren()">Insertar Tren</button> -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- <button class="btn btn-primary mt-3" (click)="irAEstaciones()">Ir a estaciones</button> -->
+    </div>
+    <a [routerLink]="['/guardar-usuario']" class="btn btn-primary">Agregar Nuevo Usuario</a>
+   
+    <a [routerLink]="['/estaciones']" class="btn btn-warning botonH">Ir a estaciones</a>
+  </div>
+  
