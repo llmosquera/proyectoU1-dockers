@@ -1,0 +1,109 @@
+body {
+    background-image: url('../../../assets/ferrovial.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgba(255, 255, 255);
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-top: 100px; /* Ajusta el margen superior según tus necesidades */
+    margin-bottom: 50px; /* Ajusta el margen inferior según tus necesidades */
+    /* margin-left: 150; */
+    margin-right: 300px;
+}
+
+.form-label {
+    color: black;
+    margin-top: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 25px;
+}
+
+
+.form-control, select {
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0 auto 20px; /* Centro vertical y espacio en la parte inferior */
+    border-color: black;
+}
+
+.pass {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -70px; /* Ajusta la posición vertical según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-check-input {
+    margin-top: 25px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.form-check-input{
+    background-color: rgb(0, 0, 0);
+    margin-left: 28px;
+    border-color: black;
+
+}
+.g{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 15px;
+    
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.input-group-text{
+    background-color: #000000;
+    color: #fff;
+
+}
