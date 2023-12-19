@@ -22,7 +22,7 @@ export class GuardarTrenComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerEstaciones();
   }
-
+//Obtener estaciones
   obtenerEstaciones() {
     this.trenService.obtenerEstaciones().subscribe(
       (estaciones: Estacion[]) => {
