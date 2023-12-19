@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <div>
+    <h2>Lista de Trenes</h2>
+    <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Capacidad</th>
+          <th>Estado</th>
+          <th>Estación Asociada</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tren of trenes">
+          <td>{{ tren.id_tren }}</td>
+          <td>{{ tren.modelo_tren }}</td>
+          <td>{{ tren.capacidad }}</td>
+          <td>{{ tren.estado ? 'Activo' : 'Inactivo' }}</td>
+          <td>
+            <span *ngFor="let estacion of tren.id_estacion">
+              {{ estacion.nombre_estacion }}
+            </span>
+          </td>
+          <td>
+            <button class="btn " (click)="irAEditarTren(tren.id_tren)"><i class="fa fa-pencil-square" style="font-size:25px;"></i></button>
+            <button class="btn " (click)="eliminarTren(tren.id_tren)"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px; color: red;"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary mt-3" (click)="irAGuardarTren()">Insertar Tren</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn btn-primary mt-3 animated-btn" (click)="irAEstaciones()">
+      
+        Estaciones
+    
+    </button>
+<br>
+<br>
+<br>
+
+    <button class="btn btn-primary mt-3 animated-btn" (click)="irARutas()">
+      
+      Rutas
+  
+  </button>
+
+    
+    
+  </div>
+</div>
