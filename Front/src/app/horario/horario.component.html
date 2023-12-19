@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container mt-4">
+
+    
+<div>
+  <h2>Lista de Horarios</h2>
+  <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Días de la Semana</th>
+        <th>Hora de Salida</th>
+        <th>Hora de Llegada</th>
+        <th>Ruta</th>
+        <th>Tren</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let horario of horarios">
+        <td>{{ horario.id_horario }}</td>
+        <td>{{ horario.dias_semana }}</td>
+        <td>{{ horario.hora_salida }}</td>
+        <td>{{ horario.hora_llegada }}</td>
+        <!-- Agrega más celdas según tus necesidades -->
+        <td>
+          <span *ngFor="let ruta of horario.id_ruta">
+              {{ ruta.descripcion}}
+            </span>
+        </td>
+        <td>
+          <span *ngFor="let tren of horario.id_tren">
+              {{ tren.modelo_tren}}
+            </span>
+        </td>
+        <td>
+          <button class="btn" (click)="irAEditarHorario(horario.id_horario)"><i class="fa fa-pencil-square" style="font-size:25px;"></i></button>
+          <button class="btn" (click)="eliminarHorario(horario.id_horario)"><i class="fa fa-trash" style="font-size: 25px; color: red;"></i></button>
+         
+        </td>
+      </tr>
+    </tbody>
+   
+  </table>
+</div>
+
+  </div>
+ <div class="container mt-4">
+  <button class="btn btn-primary" (click)="IrAGuardarHorario()"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+    Insertar Horario</button>
+ </div>
+
+ <div class="container mt-4">
+  <button class="btn btn-primary" (click)="IrAReservas()"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+    Ir a reserva billetes</button>
+ </div>
+
+ 
+</body>
+</html>
