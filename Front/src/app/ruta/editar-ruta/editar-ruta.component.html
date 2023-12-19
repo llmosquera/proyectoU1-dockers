@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- editar-tren.component.html -->
+
+  <form (submit)="actualizarRuta()" class="mt-3">
+    <img class="profile-image" src="../../../assets/ferrovial.jpg" alt="Profile Image">
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripcion</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-file-text"></i></span>
+        </div>
+        <input [(ngModel)]="nuevaRuta.descripcion" name="descripcion" type="text" class="form-control"
+        id="descripcion" required>      
+      </div>
+      
+    </div>
+
+    <div class="mb-3">
+      <label for="duracion_estimada" class="pass">Duración Estimada</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+        </div>
+        <input [(ngModel)]="nuevaRuta.duracion_estimada" name="duracion_estimada" type="time" class="form-control" id="duracion_estimada"
+        required>
+      </div>
+      
+    </div>
+
+    <div class="mb-3">
+      <label for="estacion" class="pass">Seleccionar Estación</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-fort-awesome"></i></span>
+        </div>
+        <select [(ngModel)]="idEstacion" name="estacion" class="form-control" required>
+          <option *ngFor="let estacion of estaciones" [value]="estacion.id_estacion">
+            {{ estacion.nombre_estacion }}
+          </option>
+        </select>      </div>
+     
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Ruta</button>
+  </form>
+
+  
+</body>
+</html>
