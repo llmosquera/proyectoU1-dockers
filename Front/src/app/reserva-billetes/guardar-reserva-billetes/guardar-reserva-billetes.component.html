@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  
+  <h2>Guardar Reserva de Billetes</h2>
+  <form (submit)="guardarReserva()">
+    <img class="profile-image" src="../../../assets/ferrovial.jpg" alt="Profile Image">
+    <div class="form-group">
+      <label  for="detallePasajero">Detalle del Pasajero</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        </div>
+        <input type="text" class="form-control" id="detallePasajero" [(ngModel)]="nuevaReserva.detalle_pasajero" name="detallePasajero" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="pass" for="numAsientos">Número de Asientos Reservados</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-sort-numeric-asc"></i></span>
+        </div>
+        <input type="text" class="form-control" id="numAsientos" [(ngModel)]="nuevaReserva.num_asientos_reservados" name="numAsientos" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="pass" for="idUsuario">Usuario</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        </div>
+        <select class="form-control" id="idUsuario" [(ngModel)]="idUsuario" name="idUsuario" required>
+          <option *ngFor="let usuario of usuarios" [value]="usuario.id_usuario">{{ usuario.nombre_usuario }}</option>
+        </select>      
+      </div>
+      
+    </div>
+    <div class="form-group">
+
+      <label  class="pass" for="idHorario">Horario</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+        <select class="form-control" id="idHorario" [(ngModel)]="idHorario" name="idHorario" required>
+          <option *ngFor="let horario of horarios" [value]="horario.id_horario">{{ horario.dias_semana }}</option>
+        </select>  
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label class="g" for="estadoReserva">Estado de la Reserva</label>
+      
+      <input type="checkbox" class="form-check-input" id="estadoReserva" [(ngModel)]="nuevaReserva.estado_reserva" name="estadoReserva">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+  </form>
+
+  
+</body>
+</html>
