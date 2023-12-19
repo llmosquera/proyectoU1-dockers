@@ -12,9 +12,9 @@ public class ReservaEntidad {
     private Integer num_asientos_reservados;
     private Boolean estado_reserva;
 
-    //relacion de miuchos a unos con usuario
+    //relacion de muchos a unos con usuario
     private List<UsuarioEntidad> id_usuario;
 
-    //relaion de muchos a unos con horario
+    //relacion de muchos a unos con horario
     private List<HorarioEntidad> id_horario;
 }
