@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container mt-4">
+    <div>
+      <h2>Lista de Reservas</h2>
+      <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID Reserva</th>
+            <th>Horario</th>
+            <th>Detalle Pasajero</th>
+            <th>Número de Asientos Reservados</th>
+            <th>Estado de Reserva</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of reservas">
+            <td>{{ reserva.id_reserva }}</td>
+            <td>
+              <span *ngFor="let horario of reserva.id_horario">
+                  {{ horario.dias_semana}}
+                </span>
+            </td>
+            <td>{{ reserva.detalle_pasajero }}</td>
+            <td>{{ reserva.num_asientos_reservados }}</td>
+            <td>{{ reserva.estado_reserva ? 'Activa' : 'Inactiva' }}</td>
+            <td>
+              <span *ngFor="let usuario of reserva.id_usuario">
+                  {{ usuario.nombre_usuario}}
+                </span>
+            </td>
+  
+            <td>
+              <button class="btn btn-warning" (click)="irAEditarReserva(reserva.id_reserva)">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarReserva(reserva.id_reserva)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+  
+      </table>
+    </div>
+    <button class="btn btn-primary" (click)="IrAGuardarReserva()">Insertar Reserva</button>
+
+  </div>
+  
+</body>
+</html>
