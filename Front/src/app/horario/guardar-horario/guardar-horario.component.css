@@ -1,0 +1,73 @@
+body {
+  background-image: url('../../../assets/ferrovial.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 50px; /* Ajusta el margen superior según tus necesidades */
+  margin-bottom: 50px; /* Ajusta el margen inferior según tus necesidades */
+  margin-left: 250px;
+}
+
+.form-label {
+  color: black;
+  margin-top: 30px; /* Ajusta el margen superior según tus necesidades */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form-control, select {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0 auto 20px; /* Centro vertical y espacio en la parte inferior */
+  border-color: black;
+}
+
+button {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: -70px; /* Ajusta la posición vertical según tus necesidades */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pass {
+  font-family: fantasy;
+  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+.input-group {
+  margin-left: 5px;
+  border-radius: 10px;
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 5px;
+  border-radius: 10px;
+}
+
+.input-group-text {
+  background-color: #000000;
+  color: #fff;
+}
