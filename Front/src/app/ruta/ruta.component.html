@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <!-- ruta.component.html -->
+
+<div>
+  <h2>Lista de Rutas</h2>
+  <table class="table table-bordered" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Duración Estimada</th>
+        <th>Estación Asociada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ruta of rutas">
+       <td>{{ ruta.id_ruta }}</td>
+        <td>{{ ruta.descripcion }}</td>
+        <td>{{ ruta.duracion_estimada }}</td>
+        <td>
+          <span *ngFor="let estacion of ruta.id_estacion">
+              {{ estacion.nombre_estacion }}
+            </span>
+        </td>
+        <td>
+          <button class="btn btn-warning" (click)="irAEditarRuta(ruta.id_ruta)">Editar</button>
+          <button class="btn btn-danger" (click)="eliminarRuta(ruta.id_ruta)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <br>
+  <br>
+  <br>
+  <button class="btn btn-primary" (click)="irAGuardarRuta()">Guardar Nueva Ruta</button> <br>
+  <br>
+  <br>
+  <button class="btn btn-primary" (click)="irAHorario()">Ir a horario</button>
+</div>
+
+</div>
