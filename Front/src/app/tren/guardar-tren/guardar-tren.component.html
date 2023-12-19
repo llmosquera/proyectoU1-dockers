@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form (submit)="guardarTren()" class="mt-3">
+    <img class="profile-image" src="../../../assets/ferrovial.jpg" alt="Profile Image">
+
+    <div class="mb-3">
+      <label for="modeloTren" class="form-label">Modelo de Tren</label>
+      <input [(ngModel)]="nuevoTren.modelo_tren" name="modelo_tren" type="text" class="form-control"
+        id="modeloTren" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="capacidad" class="pass">Capacidad</label>
+      <input [(ngModel)]="nuevoTren.capacidad" name="capacidad" type="text" class="form-control" id="capacidad"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="estado" class="g">Estado</label>
+      <input [(ngModel)]="nuevoTren.estado" name="estado" type="checkbox" class="form-check-input" id="estado"
+        required>
+    </div>
+    <div class="mb-3">
+      <label for="estacion" class="pass">Seleccionar Estación</label>
+      <select [(ngModel)]="idEstacion" name="estacion" class="form-control" required>
+        <option *ngFor="let estacion of estaciones" [value]="estacion.id_estacion">
+          {{ estacion.nombre_estacion }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Tren</button>
+  </form>
+
+</body>
+</html>
