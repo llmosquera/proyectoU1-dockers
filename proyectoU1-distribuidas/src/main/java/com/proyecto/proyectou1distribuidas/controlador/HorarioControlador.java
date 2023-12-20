@@ -37,7 +37,7 @@ public class HorarioControlador {
         service.eliminarHorario(id_horario);
     }
 
-    //listarTdos
+    //listarTodos
     @GetMapping("/listar/todos")
     public List<HorarioEntidad> obtenerTodos(){
         return service.obtenerTodos();
